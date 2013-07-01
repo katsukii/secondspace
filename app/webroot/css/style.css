@@ -1,0 +1,161 @@
+.opacity {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  /* IE */
+  filter: alpha(opacity=60);
+  /* IE */
+  -moz-opacity: 0.6;
+  /* Firefox(old) */
+  -khtml-opacity: 0.6;
+  /* Safari(old) */
+  opacity: 0.6; }
+
+.link_decoration {
+  color: #08c; }
+
+textarea {
+  resize: none; }
+
+#post_area .input textarea#post_textarea {
+  resize: none; }
+#post_area .input #post_textarea_cd {
+  float: right; }
+
+#time_line table thead tr th {
+  text-align: center; }
+#time_line table tbody tr td {
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer; }
+  #time_line table tbody tr td .post_face {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px 0 0; }
+  #time_line table tbody tr td .post_content {
+    width: 520px;
+    float: right;
+    margin: 0;
+    padding: 0 10px; }
+    #time_line table tbody tr td .post_content .post_user_name {
+      margin: 0;
+      padding: 0px;
+      font-size: 11px;
+      line-height: 11px; }
+  #time_line table tbody tr td h4 {
+    font-size: 17px;
+    padding: 0;
+    margin-top: 0px; }
+  #time_line table tbody tr td ul.post_actions {
+    list-style: none;
+    margin: 15px 0 0 0; }
+    #time_line table tbody tr td ul.post_actions li {
+      display: none;
+      padding-right: 10px;
+      float: left;
+      font-size: 11px; }
+      #time_line table tbody tr td ul.post_actions li i {
+        margin: -1px 3px 0 0; }
+    #time_line table tbody tr td ul.post_actions li.date {
+      display: block;
+      padding: 0;
+      color: gray;
+      float: right; }
+  #time_line table tbody tr td .comment_frame {
+    background-color: #f3f3f3;
+    width: 520px;
+    padding: 0;
+    margin: 0;
+    float: right; }
+    #time_line table tbody tr td .comment_frame .comment_group {
+      width: 520px;
+      height: auto;
+      border-top: 1px solid white;
+      clear: both; }
+      #time_line table tbody tr td .comment_frame .comment_group .co_face_icon {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        padding: 0;
+        float: left; }
+      #time_line table tbody tr td .comment_frame .comment_group .comment_content {
+        width: 470px;
+        padding: 0;
+        margin: 0;
+        float: right; }
+        #time_line table tbody tr td .comment_frame .comment_group .comment_content .comment_user_name {
+          padding: 5px 0 0 0;
+          margin: 0;
+          font-size: 9px; }
+        #time_line table tbody tr td .comment_frame .comment_group .comment_content p {
+          margin: 0 5px 5px 5px;
+          word-break: break-word;
+          font-size: 11px;
+          line-height: 1.2em; }
+        #time_line table tbody tr td .comment_frame .comment_group .comment_content ul {
+          list-style: none;
+          margin: 0; }
+          #time_line table tbody tr td .comment_frame .comment_group .comment_content ul li {
+            line-height: 10px;
+            float: right;
+            font-size: 10px;
+            padding: 0 0 3px 5px; }
+          #time_line table tbody tr td .comment_frame .comment_group .comment_content ul li.date {
+            color: gray;
+            float: right;
+            padding-right: 5px; }
+  #time_line table tbody tr td form.comment_form {
+    float: right;
+    height: 80px;
+    margin: 5px 0 0 0;
+    padding-top: 10px;
+    border-top: 1px solid #f3f3f3; }
+    #time_line table tbody tr td form.comment_form textarea {
+      margin: 0 0 5px;
+      font-size: 11px;
+      resize: none; }
+    #time_line table tbody tr td form.comment_form .controls {
+      text-align: right; }
+
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 8px 8px;
+  line-height: 20px;
+  font-size: 14px; }
+
+#profile {
+  border: 1px solid #ddd;
+  margin-top: 25px; }
+  #profile table tbody tr td {
+    padding: 10px; }
+    #profile table tbody tr td p {
+      padding-top: 10px; }
+
+table#follow tbody tr td .f_u_info, table#follower tbody tr td .f_u_info {
+  line-height: 30px; }
+  table#follow tbody tr td .f_u_info .unfollow_btn, table#follower tbody tr td .f_u_info .unfollow_btn {
+    cursor: pointer; }
+table#follow tbody tr td .f_u_des, table#follower tbody tr td .f_u_des {
+  font-size: 10px;
+  color: gray;
+  line-height: 12px; }
+
+table#draft_area thead tr th {
+  text-align: center; }
+  table#draft_area thead tr th .write_draft {
+    position: absolute;
+    padding-left: 50px; }
+table#draft_area tbody tr td, table#draft_area tbody tr td h4 {
+  font-size: 12px;
+  line-height: 14px;
+  cursor: pointer; }
+table#draft_area tbody tr td {
+  word-break: break-word; }
+  table#draft_area tbody tr td h4 {
+    margin: 4px 0; }
+table#draft_area tbody tr td .date {
+  color: gray; }
+
+.modal-header h3 {
+  font-size: 15px; }
+
+.modal-body {
+  word-break: break-word; }

@@ -1,0 +1,242 @@
+.opacity{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; /* IE */
+	filter: alpha(opacity=60); /* IE */
+	-moz-opacity:0.6; /* Firefox(old) */
+	-khtml-opacity: 0.6; /* Safari(old) */
+	opacity: 0.6;
+}
+
+
+
+//テキストリンクと同じ装飾
+.link_decoration{
+	color:#08c;
+	// color:#005580;
+	// text-decoration: underline;
+}
+textarea{resize:none}
+
+
+//投稿領域
+#post_area{
+	// border-bottom:1px solid rgba(0,0,0,.2);
+	.input{
+		textarea#post_textarea{resize:none;}
+		#post_textarea_cd{
+			float:right;
+		}
+	}
+}
+
+
+//タイムライン
+#time_line{
+	table{
+		thead tr th{text-align:center;}
+		tbody tr td{
+			.post_face{
+				width:50px;
+				height:50px;
+				margin:0 5px 0 0;
+			}
+			.post_content{
+				width:520px;
+				float:right;
+				margin:0;
+				padding:0 10px;
+				.post_user_name{
+					margin:0;
+					padding:0px;
+					font-size:11px;
+					line-height:11px;
+				}
+			}
+			
+			h4{
+				font-size:17px;
+				padding: 0;
+				margin-top:0px;
+			}
+			padding:10px;
+			font-size:13px;
+			cursor:pointer;
+			//投稿の編集
+			ul.post_actions{
+				list-style:none;
+				margin:15px 0 0 0;
+				li{
+					display: none;
+					padding-right:10px;
+					float:left;
+					font-size:11px;
+					i{
+						margin:-1px 3px 0 0;
+					}
+				}
+				li.date{
+					display: block;
+					padding:0;
+					color:gray;
+					float:right;
+				}
+
+			}
+			.comment_frame{
+				background-color: #f3f3f3;
+				width:520px;
+				padding:0;
+				margin:0;
+				float: right;
+				.comment_group{
+					width:520px;
+					height:auto;
+					// border-top: 1px solid #f3f3f3;
+					border-top: 1px solid white;
+					clear:both;
+					.co_face_icon{
+						width:40px;
+						height:40px;
+						margin:5px;
+						padding:0;
+						float:left;
+					}
+					.comment_content{
+						width:470px;
+						padding:0;
+						margin:0;
+						float:right;
+						.comment_user_name{
+							padding:5px 0 0 0;
+							margin:0;
+							font-size:9px;
+
+						}
+						p{
+							margin:0 5px 5px 5px;
+							word-break: break-word;
+							font-size:11px;
+							line-height:1.2em;
+						}
+						ul{
+							list-style: none;
+							margin:0;
+							li{
+								line-height:10px;
+								float: right;
+								font-size:10px;
+								padding:0 0 3px 5px;
+							}
+							li.date{
+								color:gray;
+								float: right;
+								padding-right: 5px;
+							}
+						}
+					}
+				}
+			}
+			form.comment_form{
+				float:right;
+				height:80px;
+				margin:5px 0 0 0;
+				padding-top:10px;
+				border-top: 1px solid #f3f3f3;
+				textarea{
+					margin:0 0 5px;
+					font-size:11px;
+					resize:none;
+				}
+				.controls{
+					text-align:right;
+				}
+			}
+		}
+	}
+}
+
+h2{
+	border-bottom:1px solid #ddd;
+	padding:0 0 8px 8px;
+	line-height:20px;
+	font-size:14px;
+}
+
+//プロフィール
+#profile{
+	border:1px solid #ddd;
+	margin-top:25px;
+	table{
+		tbody{
+			tr td{
+				padding:10px;
+				p{padding-top:10px;}
+			}
+		}
+	}
+}
+
+//フォロー,フォロワーのスタイル
+table#follow,table#follower{
+	tbody tr td{
+		.f_u_info{
+			line-height:30px;
+			.unfollow_btn{
+				cursor:pointer;
+			}
+		}
+		.f_u_des{
+			font-size:10px;
+			color:gray;
+			line-height:12px;
+		}
+	}
+}
+
+table#follower{
+	
+}
+
+
+// 下書き
+table#draft_area{
+	thead{
+		tr th{
+			text-align:center;
+			.write_draft{
+				position:absolute;
+				padding-left:50px;
+			}
+		}
+	}
+	tbody{
+		// タイトルと内容
+		tr td,tr td h4{
+			font-size:12px;
+			line-height:14px;
+			cursor: pointer;
+		}
+		tr td{
+			word-break:break-word;
+			h4{margin:4px 0;} 
+		}
+		// 日付
+		tr td .date{
+			color:gray;
+		}
+	}
+}
+
+
+.modal-header{
+	h3{
+		font-size:15px;
+	}
+}
+
+.modal-body{
+	word-break:break-word;
+}
+
+
+
+
