@@ -14,7 +14,7 @@
 		    			<input type="submit" value="公開" name="post_btn" class="btn">
 			    	</div>
 				</div>
-				<input type="hidden" name="post_u_id" value="<?php echo $u_id;?>">
+				<input type="hidden" name="post_u_id" value="<?php echo 'a'//$u_id;?>">
 	        </form>
 	    </div>
 	</div>
@@ -45,7 +45,7 @@
 			<thead><tr><th>あなたのプロフィール</th></tr></thead>
 			<tbody>
 				<tr><td>
-					<img width="40" height="40" src="<?php echo h($user['tw_profile_image_url']); ?>"> 
+					<img width="40" height="40" src="<?php echo 'a'//h($user['tw_profile_image_url']); ?>"> 
 					
 					
 				</td></tr>
@@ -55,8 +55,7 @@
 </div>
 
 
-
-<!-- 		<p>
+<p>
 			<?php echo $this->BootstrapPaginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')));?>
 		</p>
 
@@ -107,4 +106,4 @@
 		</ul>
 		</div>
 	</div>
- -->
+ 

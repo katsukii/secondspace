@@ -38,10 +38,9 @@
 	echo $this->fetch('css');
 	?>
 </head>
-
 <body>
 
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom:40px;">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -54,7 +53,7 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#help">help</a></li>
+						<li><a href="#help">Help</a></li>
 					</ul>
 			        <!-- 右上ドロップダウンメニュー -->
 			        <ul class="nav pull-right">
@@ -74,13 +73,13 @@
 		</div>
 	</div>
 
-	<div class="container">
+<div class="container">
 
 		<?php echo $this->Session->flash(); ?>
 
 		<?php echo $this->fetch('content'); ?>
 
-	</div> <!-- /container -->
+</div> <!-- /container -->
 
 	<!-- Le javascript
     ================================================== -->

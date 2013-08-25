@@ -38,5 +38,24 @@ class AppController extends Controller {
 		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
 		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
 	);
-	public $layout = 'TwitterBootstrap.default';
+	// public $layout = 'TwitterBootstrap.default';
+	public $layout = 'bootstrap';
+	public $components = array(
+		'DebugKit.Toolbar', 
+	    'Session',
+	    'Auth' => array(
+	        'loginRedirect' => array('controller' => 'top_pages', 'action' => 'index'),
+	        'logoutRedirect' => array('controller' => 'users', 'action' => 'login'), 
+            'authenticate' => array(
+                'Form' => array(
+                    'userModel' => 'User', //ユーザー情報のモデル
+                    'fields' => array('username' => 'email') //認証をusernameからemailカラムに変更
+                )
+            ),
+	    )
+	); 
+
+	public function beforeFilter() {
+
+	}
 }
