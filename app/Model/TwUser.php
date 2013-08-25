@@ -16,35 +16,35 @@ class TwUser extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'TwUser' => array(
-			'className' => 'TwUser',
-			'foreignKey' => 'tw_user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
+// 	public $belongsTo = array(
+// 		'TwUser' => array(
+// 			'className' => 'TwUser',
+// 			'foreignKey' => 'tw_user_id',
+// 			'conditions' => '',
+// 			'fields' => '',
+// 			'order' => ''
+// 		)
+// 	);
 
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'TwUser' => array(
-			'className' => 'TwUser',
-			'foreignKey' => 'tw_user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
+// /**
+//  * hasMany associations
+//  *
+//  * @var array
+//  */
+// 	public $hasMany = array(
+// 		'TwUser' => array(
+// 			'className' => 'TwUser',
+// 			'foreignKey' => 'tw_user_id',
+// 			'dependent' => false,
+// 			'conditions' => '',
+// 			'fields' => '',
+// 			'order' => '',
+// 			'limit' => '',
+// 			'offset' => '',
+// 			'exclusive' => '',
+// 			'finderQuery' => '',
+// 			'counterQuery' => ''
+// 		)
+// 	);
 
 }

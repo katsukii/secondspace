@@ -9,7 +9,7 @@
 				echo $this->BootstrapForm->input('password', array('label' => 'パスワード'));
 				echo $this->BootstrapForm->input('temppassword', array('label' => 'パスワード(確認用)' , 'type' => 'password'));
 				?>
-				<?php echo $this->BootstrapForm->submit(__('Submit'));?>
+				<?php echo $this->BootstrapForm->submit(__('登録'));?>
 			</fieldset>
 		<?php echo $this->BootstrapForm->end();?>
 	</div>
