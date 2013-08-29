@@ -48,26 +48,32 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<h1 style="padding:0;margin:0;line-height:20px;"><a class="brand" href="/myservice/secondspace"><?php echo __('Secondspace(α)'); ?></a></h1>
+				<h1 style="padding:0;margin:0;line-height:20px;">
+					<?php echo $this->Html->link('Secondspace(α)', array('controller' => 'top_pages', 'action' => 'index'), array('class' => 'brand')); ?>
+				</h1>
 				
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><?php echo $this->Html->link('Home', array('controller' => 'top_pages', 'action' => 'index')); ?></li>
 						<li><a href="#help">Help</a></li>
 					</ul>
 			        <!-- 右上ドロップダウンメニュー -->
+			        <?php if($auth_user):?>
 			        <ul class="nav pull-right">
 			            <li class="dropdown">
 			                <a href="" class="dropdown-toggle" data-toggle="dropdown">
-			                <img width="20" height="20" src="">katsukii
+			                <img width="20" height="20" src="">
+
+			                <?php echo $auth_user['name']; ?>
 			                <span class="caret"></span>
 			                </a>
 			                <ul class="dropdown-menu">
-			                    <li><a href=""><i class="icon-cog"></i>Settings</a></li>
-			                    <li><a href="logout.php"><i class="icon-share-alt"></i>Logout</a></li>
+			                    <li><?php echo $this->Html->link('<i class="icon-cog"></i>プロフィール設定', array('controller' => 'users', 'action' => 'edit'), array('escape' => false)); ?></li>
+			                    <li><?php echo $this->Html->link('<i class="icon-share-alt"></i>ログアウト', array('controller' => 'users', 'action' => 'logout'), array('escape' => false)); ?></li>
 			                </ul>
 			            </li>
-			        </ul>					
+			        </ul>
+			        <?php endif; ?>					
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>

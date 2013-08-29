@@ -163,5 +163,20 @@ class User extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+	public $hasOne = array(
+		'TwUser' => array(
+			'className' => 'TwUser',
+			'foreignKey' => 'user_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 
 }

@@ -16,15 +16,15 @@ class TwUser extends AppModel {
  *
  * @var array
  */
-// 	public $belongsTo = array(
-// 		'TwUser' => array(
-// 			'className' => 'TwUser',
-// 			'foreignKey' => 'tw_user_id',
-// 			'conditions' => '',
-// 			'fields' => '',
-// 			'order' => ''
-// 		)
-// 	);
+	public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 
 // /**
 //  * hasMany associations

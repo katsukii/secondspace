@@ -4,7 +4,7 @@
     <fieldset>
         <legend><?php echo __('メールアドレスとパスワードでログイン'); ?></legend>
     <?php 
-        echo $this->BootstrapForm->input('email', array('lagel' => 'メールアドレス'));
+        echo $this->BootstrapForm->input('email', array('lagel' => 'メールアドレス', 'placeholder' => 'your@email.com'));
         echo $this->BootstrapForm->input('password', array('lagel' => 'パスワード'));
         echo $this->BootstrapForm->submit(__('ログイン'));?>
     </fieldset>
@@ -12,7 +12,7 @@
 </div>
 
 
-<?php echo $this->BootstrapForm->create('TwUser', array('controller' => 'tw_users', 'action' => 'auth')); ?>
+<form method = "post" action = "<?php echo $this->Html->url(array('controller' => 'twitter', 'action' => 'request_auth')); ?>">
 <fieldset>
 	<legend>Twitterでログイン</legend>
 </fieldset>

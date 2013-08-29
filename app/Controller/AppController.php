@@ -43,30 +43,20 @@ class AppController extends Controller {
 	public $components = array(
 		'DebugKit.Toolbar', 
 	    'Session',
-	    // 'Auth' => array(
-	    //     'loginRedirect' => array('controller' => 'top_pages', 'action' => 'index'),
-	    //     'logoutRedirect' => array('controller' => 'users', 'action' => 'login'), 
-     //        'authenticate' => array(
-     //            'Form' => array(
-     //                'userModel' => 'User', //ユーザー情報のモデル
-     //                'fields' => array('username' => 'email') //認証をusernameからemailカラムに変更
-     //            )
-     //        ),
-	    // )
 	    'Auth' => array(
 	        'loginRedirect' => array('controller' => 'top_pages', 'action' => 'index'),
-	        'logoutRedirect' => array('controller' => 'tw_users', 'action' => 'login'), 
+	        'logoutRedirect' => array('controller' => 'users', 'action' => 'login'), 
             'authenticate' => array(
                 'Form' => array(
-                    'userModel' => 'TwUser', //ユーザー情報のモデル
-                    // 'fields' => array('username' => 'email') //認証をusernameからemailカラムに変更
+                    'userModel' => 'User', //ユーザー情報のモデル
+                    'fields' => array('username' => 'email') //認証をusernameからemailカラムに変更
                 )
             ),
-	    )
+	    ), 
 	); 
 
 	public function beforeFilter() {
-		// $this->Auth->allow();
-
+		$auth_user = $this->Auth->user();
+		$this->set(compact('auth_user'));
 	}
 }

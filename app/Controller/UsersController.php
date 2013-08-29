@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::import('Vendor', 'OAuth/OAuthClient'); 
+App::import('Model','TwUser');
 /**
  * Users Controller
  *
@@ -25,10 +27,12 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array();
+
 	public function beforeFilter() {
-		$this->Auth->allow('add');
+    	$this->Auth->allow('login', 'add');
+    	parent::beforeFilter();	
 	}
+	
 /**
  * index method
  *
@@ -60,31 +64,80 @@ class UsersController extends AppController {
  */
 	public function add() {
 		if ($this->Auth->user()) {
-			$this->redirect($this->referer());
+			$this->redirect('/');
 		}
+		$twitter_info = null;
+		$twitter_info = $this->Session->read('twitter_info');
+		$this->Session->delete('twitter_info');
 		if ($this->request->is('post')) {
-			$this->User->create();
+
+            //Twitter情報とひもづいている場合のユーザー登録
+            if ($twitter_info) {
+            	//新規ユーザー登録(twitter情報も含む)
+	            $user_savedata['User'] = $this->request->data['User'];
+	            $user_savedata['TwUser'] = $twitter_info['TwUser'];
+	            //保存
+	            if($this->User->saveAssociated($user_savedata)) {
+		            $this->Auth->login($this->request->data['User']);
+		            $this->Session->setFlash(
+		                __('ユーザー登録が完了しました。', __('user')),
+		                'alert',
+		                array(
+		                    'plugin' => 'TwitterBootstrap',
+		                    'class' => 'alert-success'
+		                )
+		            );
+		            $this->redirect('/');
+	            } else {
+	            	$this->Session->setFlash(
+		                __('入力項目を確認してください', __('user')),
+		                'alert',
+		                array(
+		                    'plugin' => 'TwitterBootstrap',
+		                    'class' => 'alert-error'
+		                )
+		            );
+	            }
+            }
+
+            //通常のユーザー登録
+            $this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(
-					__('The %s has been saved', __('user')),
-					'alert',
-					array(
-						'plugin' => 'TwitterBootstrap',
-						'class' => 'alert-success'
-					)
-				);
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(
-					__('The %s could not be saved. Please, try again.', __('user')),
-					'alert',
-					array(
-						'plugin' => 'TwitterBootstrap',
-						'class' => 'alert-error'
-					)
-				);
-			}
+	            $this->Auth->login($this->request->data['User']);
+	            $this->Session->setFlash(
+	                __('ユーザー登録が完了しました。', __('user')),
+	                'alert',
+	                array(
+	                    'plugin' => 'TwitterBootstrap',
+	                    'class' => 'alert-success'
+	                )
+	            );
+	            $this->redirect('/');
+            } else {
+            	$this->Session->setFlash(
+         	       __('入力項目を確認してください', __('user')),
+	                'alert',
+	                array(
+	                    'plugin' => 'TwitterBootstrap',
+	                    'class' => 'alert-error'
+	                )
+	            );
+	        }
 		}
+		//レンダリング
+		$twitter_screen_name = null;
+		if ($twitter_info) {
+			$this->Session->setFlash(
+                __('このTwitterアカウントと連携したユーザーアカウントを作成します。', __('user')),
+                'alert',
+                array(
+                    'plugin' => 'TwitterBootstrap',
+                    'class' => 'alert-info'
+                )
+            );
+			$twitter_screen_name = $twitter_info['TwUser']['tw_screen_name'];
+		}
+		$this->set(compact('twitter_screen_name'));
 	}
 
 /**
@@ -126,7 +179,7 @@ class UsersController extends AppController {
 
 	public function login() {
 		if ($this->Auth->user()) {
-			$this->redirect($this->referer());
+			$this->redirect('/');
 		}
 	    if ($this->request->is('post')) {
 	        if ($this->Auth->login()) {
